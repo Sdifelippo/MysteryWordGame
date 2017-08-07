@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
+      <link href='styles.css' rel='stylesheet'>
     <title>Mystery Word Game</title>
   </head>
   <body>
-    <h2>Mystery Word Game</h2>
-      <p> {{ word }} </p
-      <p> {{ #spaces }} _ {{ /spaces }}
+
+    <div class='mainWrapper'>
+        <div class='game'>
+            <h1>Mystery Word Game</h1>
+            <p class='randomWord'>{{ computerWord }}</p>
+            <p class='subTitle'> Enter Your Guess Below</p>
+            <form class='mainForm' action='/' method='POST'>
+                <input type='text' name='guessedLetter' class='guess' maxlength='1'>
+                <br>
+                <input type='submit' class='submit' value='SUBMIT'>
+            </form>
+            <p>You have {{guessCount}} guesses</p>
+            <p>Guessed Letters: {{userGuess}}</p>
+        </div>
+        <p class='error'>{{errorMessage}}</p>
+        <form action='/error' method='POST'>
+          <img class='mainGif' src='https://s3.amazonaws.com/rapgenius/1378558985_old-spice-mind-blown-o.gif' alt='mind blown gif'>
+        </form>
     </div>
-  </body>
+
+</body>
 </html>

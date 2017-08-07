@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='styles.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class='mainWrapper'>
+        <h1>You Won</h1>
+        <p class='word'>The word was: <span class='upperCase'>{{randomWord}}</span></p>
+        <img src='https://media.tenor.com/images/9a5bae5c970bd5e6c093157d6dde2660/tenor.gif' alt='dancing gif'>
+        <form class='failForm' action='/again' method='POST'>
+            <span id='confirm'><input type = 'submit' value='PLAY AGAIN' class='gotIt'></span>
+        </form>
+    </div>
+
+</body>
+
+</html>

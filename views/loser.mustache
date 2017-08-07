@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='styles.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class='mainWrapper'>
+        <h1>You Lost!!!</h1>
+        <p class='word'>The word was: <span class='upperCase'>{{randomWord}}</span></p>
+        <img src='https://m.popkey.co/2f6408/473k8.gif' alt='loser gif'>
+        <form class='loserForm' action='/again' method='POST'>
+            <span id='confirm'><input type = 'submit' value='PLAY AGAIN' class='got'></span>
+        </form>
+    </div>
+
+</body>
+
+</html>

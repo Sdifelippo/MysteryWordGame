@@ -36,7 +36,7 @@ function replaceDashWithLetter(letter) {
   }
 }
 function selectRandomWord(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min + 2) + min);
 }
 
 //set view engine
@@ -83,16 +83,16 @@ app.post('/', function(req, res) {
   } else if (
     userGuess.guessedLetter.length > 1 ||
     userGuess.guessedLetter.length <= 0 ||
-    userGuess.guessedLetter.indexOf(' ') >= 0
+    userGuess.guessedLetter.indexOf(' ') >= 0 ||
+    userGuess.guessedLetter >= 0
   ) {
     errorMessage =
       'You may only guess one letter at a time. No spaces. No Numbers';
     return res.redirect('/');
-} else if (isNaN(userGuesses)) {guessCount -= 1;
+} else if (userGuesses) {guessCount -= 1;
     userGuesses.push(userGuess.guessedLetter);
   }
   if (guessCount <= 0) {
-    guessCount = 8;
     errorMessage = 'No more Guesses for You.';
     return res.render('loser', {
       randomWord: randomWord,

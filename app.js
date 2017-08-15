@@ -79,7 +79,7 @@ app.post('/', function(req, res) {
       }
     }
     userGuesses.push(guessedLetter);
-    guessCount -= 1;
+    guessCount -= 0;
   } else if (
     userGuess.guessedLetter.length > 1 ||
     userGuess.guessedLetter.length <= 0 ||
